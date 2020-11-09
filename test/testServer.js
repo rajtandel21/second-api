@@ -5,13 +5,15 @@ const server = require('../server/createServer');
 describe('API tests',  ()=>{
     let api;
 
-    let testMovie = [
-        {name: "kung fu panda", year: 2008}
-    ];
+    let testMovie = {
+        name: "kung fu panda", 
+        year: 2008
+    };
 
-    let dupMovie = [
-        {name: "day after tomorrow", year: 2008}
-    ];
+    let dupMovie = {
+        name: "day after tomorrow", 
+        year: 2008
+    };
 
     before(()=>{
         //start server
@@ -44,9 +46,9 @@ describe('API tests',  ()=>{
         request(api)
             .post('/movies')
             .send(testMovie)
-            .expect({id: 5, ...testMovie})
+            .expect({id: 4, ...testMovie})
             .expect(201, done);
-    })
+    });
 
     // 4. check that the server does not take dup data
     it('responds to duplicate data entry', done=>{
@@ -67,8 +69,9 @@ describe('API tests',  ()=>{
     // 6. check if you can delete the last movie in the list
     it('responds to the delete movie', done=>{
         require(api)
-            .delete('/movies')
-            .expect(200, done);
+            .delete('/movies/1')
+            .expect('Content-Type', '/json/')
+            .expect(200,done);
     })
 
 

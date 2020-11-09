@@ -18,7 +18,7 @@
   },
   "scripts": {
     "test": "mocha || true",
-    "start": "node server.js",
+    "start": "nodemon ./server/startServer.js",
     "coverage": "nyc --reporter=text-summary mocha"
   },
   "keywords": [],

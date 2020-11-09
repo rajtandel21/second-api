@@ -8,6 +8,16 @@
 </head>
 <body>
     <h1>My API data</h1>
-    <form id="myForm"></form>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter movie name">
+        <label for="year">Year:</label>
+        <input type="text"  name="year" id="year" placeholder="Enter release year">
+        <input type="submit" id="submit" value="send">
+    </form>
+    <section id="apiData">
+        <h2>List of favorite movies</h2>
+        <ul id="movieList"></ul>
+    </section>
 </body>
 </html>

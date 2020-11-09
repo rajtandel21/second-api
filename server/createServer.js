@@ -47,6 +47,8 @@ server.post('/movies', (req, res)=>{
 
 server.delete('/movies', (req,res)=>{
     favMovies.pop();
+    console.log('/n');
+    console.log(favMovies);
     res.status(200).send(favMovies)
 })
 
